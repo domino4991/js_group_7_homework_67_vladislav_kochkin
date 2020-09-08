@@ -1,0 +1,82 @@
+.Calculator-box {
+    width: 500px;
+    margin: 0 auto;
+    display: grid;
+    grid-gap: 5px;
+    grid-template:
+            "output output output output"
+            "output output output output"
+            "output output output output"
+            "seven eight nine plus"
+            "four five six minus"
+            "one two three multiply"
+            "zero equally equally split";
+}
+
+.Calculator-output {
+    grid-area: output;
+}
+
+.Calculator-box button {
+    margin-bottom: 10px;
+}
+
+.Calculator-box .Button-one {
+    grid-area: one;
+}
+
+.Calculator-box .Button-two {
+    grid-area: two;
+}
+
+.Calculator-box .Button-three {
+    grid-area: three;
+}
+
+.Calculator-box .Button-four {
+    grid-area: four;
+}
+
+.Calculator-box .Button-five {
+    grid-area: five;
+}
+
+.Calculator-box .Button-six {
+    grid-area: six;
+}
+
+.Calculator-box .Button-seven {
+    grid-area: seven;
+}
+
+.Calculator-box .Button-eight {
+    grid-area: eight;
+}
+
+.Calculator-box .Button-nine {
+    grid-area: nine;
+}
+
+.Calculator-box .Button-zero {
+    grid-area: zero;
+}
+
+.Calculator-box .Button-plus {
+    grid-area: plus;
+}
+
+.Calculator-box .Button-minus {
+    grid-area: minus;
+}
+
+.Calculator-box .Button-multiply {
+    grid-area: multiply;
+}
+
+.Calculator-box .Button-equally {
+    grid-area: equally;
+}
+
+.Calculator-box .Button-split {
+    grid-area: split;
+}
