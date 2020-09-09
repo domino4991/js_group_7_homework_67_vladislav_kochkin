@@ -1,5 +1,5 @@
 .Calculator-box {
-    width: 500px;
+    width: 250px;
     margin: 0 auto;
     display: grid;
     grid-gap: 5px;
@@ -10,11 +10,17 @@
             "seven eight nine plus"
             "four five six minus"
             "one two three multiply"
-            "zero equally equally split";
+            "zero clear equally split";
 }
 
 .Calculator-output {
     grid-area: output;
+    height: 100px;
+    background: #ccc;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Calculator-box button {
@@ -63,20 +69,30 @@
 
 .Calculator-box .Button-plus {
     grid-area: plus;
+    background: #039be5;
 }
 
 .Calculator-box .Button-minus {
     grid-area: minus;
+    background: #039be5;
 }
 
 .Calculator-box .Button-multiply {
     grid-area: multiply;
+    background: #039be5;
 }
 
 .Calculator-box .Button-equally {
     grid-area: equally;
+    background: #039be5;
 }
 
 .Calculator-box .Button-split {
     grid-area: split;
+    background: #039be5;
+}
+
+.Calculator-box .Button-clear {
+    grid-area: clear;
+    background: #039be5;
 }

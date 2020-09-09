@@ -22,6 +22,7 @@ const CalculatorBox = props => {
                 classes={`Button-${item.str}`}
                 clicked={e => props.clickBtn(e)}
             />)}
+            {props.children}
         </div>
     );
 };
