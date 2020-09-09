@@ -2,6 +2,7 @@ import React from 'react';
 import './Calculator.css';
 import CalculatorBox from "../../components/CalculatorBox/CalculatorBox";
 import {useDispatch, useSelector} from "react-redux";
+import Button from "../../components/UI/Button/Button";
 
 const Calculator = () => {
     const numbers = [
@@ -21,17 +22,16 @@ const Calculator = () => {
         {funcName: '-', str: 'minus'},
         {funcName: '*', str: 'multiply'},
         {funcName: '/', str: 'split'},
-        {funcName: '=', str: 'equally'}
         ];
 
     const strValue = useSelector(state => state.strValue);
-    const calcResult = useSelector(state => state.calcResult);
+    const sumOfNums = useSelector(state => state.sumOfNums);
     const dispatch = useDispatch();
 
     const onClickButtons = e => {
         const value = e.currentTarget.textContent;
         dispatch({type: 'ADD_VALUE', value});
-    }
+    };
 
     return (
         <div className="Calculator">
@@ -41,8 +41,21 @@ const Calculator = () => {
                 func={func}
                 clickBtn={onClickButtons}
                 output={strValue}
-                result={calcResult}
-            />
+                result={sumOfNums}
+            >
+                <Button
+                    btnType="button"
+                    label="="
+                    classes={`Button-equally`}
+                    clicked={() => dispatch({type: 'SUM_NUMS', value: eval(strValue)})}
+                />
+                <Button
+                    btnType="button"
+                    label="C"
+                    classes={`Button-clear`}
+                    clicked={() => dispatch({type: 'CLEAR'})}
+                />
+            </CalculatorBox>
         </div>
     );
 };
