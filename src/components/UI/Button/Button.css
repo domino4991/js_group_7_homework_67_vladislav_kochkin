@@ -14,3 +14,7 @@
 .Button:hover {
     background: #00bcd4;
 }
+
+.Button:disabled {
+    background: #78909c;
+}

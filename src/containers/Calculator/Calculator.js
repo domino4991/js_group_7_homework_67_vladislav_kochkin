@@ -26,11 +26,15 @@ const Calculator = () => {
 
     const strValue = useSelector(state => state.strValue);
     const sumOfNums = useSelector(state => state.sumOfNums);
+    const equallyDisable = useSelector(state => state.equallyDisable);
     const dispatch = useDispatch();
 
     const onClickButtons = e => {
         const value = e.currentTarget.textContent;
         dispatch({type: 'ADD_VALUE', value});
+        if(Number(strValue[0])) {
+            dispatch({type: 'EQUALLY_DISABLE'});
+        }
     };
 
     return (
@@ -48,6 +52,7 @@ const Calculator = () => {
                     label="="
                     classes={`Button-equally`}
                     clicked={() => dispatch({type: 'SUM_NUMS', value: eval(strValue)})}
+                    disabled={equallyDisable}
                 />
                 <Button
                     btnType="button"
